@@ -119,3 +119,10 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.error-message {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 4px;
+  min-height: 18px;
+}
