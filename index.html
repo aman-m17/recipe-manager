@@ -2,8 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>recipe manager</title>
+    <title>Recipe Manager</title>
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body></body>
+
+  <body>
+    <header>
+      <h1>Recipe Manager</h1>
+      <a href="pages/add.html" id="addRecipeBtn">Add Recipe</a>
+    </header>
+
+    <section class="controls">
+      <input type="text" id="searchInput" placeholder="Search recipes..." />
+
+      <select id="difficultyFilter">
+        <option value="all">All Difficulties</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+
+      <select id="prepTimeFilter">
+        <option value="all">Any Prep Time</option>
+        <option value="10">Up to 10 min</option>
+        <option value="20">Up to 20 min</option>
+        <option value="30">Up to 30 min</option>
+        <option value="60">Up to 1 hour</option>
+      </select>
+    </section>
+
+    <main id="recipeList" class="grid"></main>
+  </body>
 </html>

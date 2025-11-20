@@ -2,8 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="../styles/style.css" />
   </head>
-  <body></body>
+
+  <body>
+    <h2>Add Recipe</h2>
+
+    <form id="addRecipeForm">
+      <label>Title</label>
+      <input type="text" id="title" />
+
+      <label>Description</label>
+      <textarea id="description"></textarea>
+
+      <label>Ingredients</label>
+      <textarea id="ingredients"></textarea>
+
+      <label>Steps</label>
+      <textarea id="steps"></textarea>
+
+      <label>Difficulty</label>
+      <select id="difficulty">
+        <option value="">Select difficulty</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+
+      <label>Prep Time (minutes)</label>
+      <input type="number" id="prepTime" />
+
+      <label>Image URL (optional)</label>
+      <input type="text" id="imageUrl" />
+
+      <button type="submit">Save Recipe</button>
+    </form>
+  </body>
 </html>
