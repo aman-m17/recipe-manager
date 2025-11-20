@@ -115,3 +115,5 @@ export function ensureInitialData() {
     saveRecipes(samples);
   }
 }
+
+ensureInitialData();

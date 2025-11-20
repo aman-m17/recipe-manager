@@ -2,27 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Recipe Details</title>
+    <title>Recipe Detail</title>
     <link rel="stylesheet" href="../styles/style.css" />
   </head>
 
   <body>
-    <h2 id="recipeTitle">Recipe Title</h2>
+    <header>
+      <h1>Recipe Details</h1>
+      <a href="../index.html" class="btn">← Back</a>
+    </header>
 
-    <img id="recipeImage" alt="Recipe Image" />
+    <main id="detailContainer" class="detail-page"></main>
 
-    <p id="recipeDescription"></p>
-
-    <h3>Ingredients</h3>
-    <ul id="recipeIngredients"></ul>
-
-    <h3>Steps</h3>
-    <ol id="recipeSteps"></ol>
-
-    <p><strong>Difficulty:</strong> <span id="recipeDifficulty"></span></p>
-    <p><strong>Prep Time:</strong> <span id="recipePrepTime"></span></p>
-
-    <button id="editBtn">Edit</button>
-    <button id="deleteBtn">Delete</button>
+    <script type="module" src="../scripts/detail.js"></script>
   </body>
 </html>
