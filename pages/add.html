@@ -7,36 +7,43 @@
   </head>
 
   <body>
-    <h2>Add Recipe</h2>
+    <header>
+      <h1>Add Recipe</h1>
+      <a href="../index.html" class="btn">← Back</a>
+    </header>
 
-    <form id="addRecipeForm">
-      <label>Title</label>
-      <input type="text" id="title" />
+    <main>
+      <form id="addRecipeForm">
+        <label>Title</label>
+        <input type="text" id="title" required />
 
-      <label>Description</label>
-      <textarea id="description"></textarea>
+        <label>Description</label>
+        <textarea id="description" required></textarea>
 
-      <label>Ingredients</label>
-      <textarea id="ingredients"></textarea>
+        <label>Ingredients (one per line)</label>
+        <textarea id="ingredients" required></textarea>
 
-      <label>Steps</label>
-      <textarea id="steps"></textarea>
+        <label>Steps (one per line)</label>
+        <textarea id="steps" required></textarea>
 
-      <label>Difficulty</label>
-      <select id="difficulty">
-        <option value="">Select difficulty</option>
-        <option value="Easy">Easy</option>
-        <option value="Medium">Medium</option>
-        <option value="Hard">Hard</option>
-      </select>
+        <label>Difficulty</label>
+        <select id="difficulty" required>
+          <option value="">Select difficulty</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
 
-      <label>Prep Time (minutes)</label>
-      <input type="number" id="prepTime" />
+        <label>Prep Time (minutes)</label>
+        <input type="number" id="prepTime" required />
 
-      <label>Image URL (optional)</label>
-      <input type="text" id="imageUrl" />
+        <label>Image URL (optional)</label>
+        <input type="url" id="imageUrl" />
 
-      <button type="submit">Save Recipe</button>
-    </form>
+        <button type="submit" class="btn primary">Save Recipe</button>
+      </form>
+    </main>
+
+    <script type="module" src="../scripts/add.js"></script>
   </body>
 </html>
