@@ -1,25 +1,28 @@
-/* Basic Reset */
+/* ---------------------------------------------------
+   RESET
+--------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
 }
 
-/* Theme Variable */
-
+/* ---------------------------------------------------
+   THEME VARIABLES
+--------------------------------------------------- */
 :root {
   --bg-color: #ffffff;
   --text-color: #222222;
-  --card-bg: #f4f4f4;
-  --card-border: #e0e0e0;
+  --card-bg: #f7f7f7;
+  --card-border: #e5e5e5;
   --primary-btn: #0066ff;
   --primary-btn-text: #ffffff;
-  --danger-btn: #e53935;
 
   --input-bg: #ffffff;
   --input-text: #222;
-  --input-border: #cccccc;
-
+  --input-border: #c5c5c5;
   --shadow: rgba(0, 0, 0, 0.08);
 }
 
@@ -30,110 +33,161 @@
   --card-border: #333;
   --primary-btn: #3b82f6;
   --primary-btn-text: #fff;
-  --danger-btn: #ef5350;
 
   --input-bg: #1e1e1e;
   --input-text: #f5f5f5;
   --input-border: #555;
-
-  --shadow: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(255, 255, 255, 0.12);
 }
 
-/* Smooth theme transition */
-* {
-  transition: background-color 0.25s ease, color 0.25s ease,
-    border-color 0.25s ease;
-}
-
-/* Global Styles */
-
+/* ---------------------------------------------------
+   GLOBAL LAYOUT
+--------------------------------------------------- */
 body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 30px;
   background: var(--bg-color);
   color: var(--text-color);
+  font-family: system-ui, sans-serif;
 }
 
-.card,
-.recipe-detail-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  box-shadow: 0 2px 4px var(--shadow);
-}
-
-input,
-select,
-textarea {
-  background: var(--input-bg);
-  color: var(--input-text);
-  border: 1px solid var(--input-border);
-}
-
-/* Header */
+/* ---------------------------------------------------
+   HEADER
+--------------------------------------------------- */
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 25px;
 }
 
 header h1 {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--text-color);
 }
 
-header a {
-  background: #007bff;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 5px;
+#addRecipeBtn {
+  background: var(--primary-btn);
+  color: var(--primary-btn-text);
+  padding: 10px 18px;
+  border-radius: 8px;
   text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 3px 8px var(--shadow);
+  transition: 0.2s ease;
 }
 
-/* Controls (Search + Filters) */
+#addRecipeBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-3px);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#themeToggle {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 8px 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+#themeToggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+/* ---------------------------------------------------
+   SEARCH + FILTERS
+--------------------------------------------------- */
 .controls {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 14px;
   margin-bottom: 20px;
 }
 
 .controls input,
 .controls select {
-  padding: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-text);
   font-size: 14px;
+  min-width: 180px;
+  box-shadow: 0 2px 4px var(--shadow);
 }
 
-/* Grid Layout */
+/* ---------------------------------------------------
+   GRID OF CARDS
+--------------------------------------------------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 20px;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 }
 
-/* Recipe Card */
-/* .card {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 6px;
-} */
+/* ---------------------------------------------------
+   CARD UI (Modern)
+--------------------------------------------------- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 9px 18px var(--shadow);
+}
 
 .card h3 {
   margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
 }
 
 .card p {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  opacity: 0.85;
 }
 
-.card a {
+.card .view-btn {
   display: inline-block;
-  background: #007bff;
-  color: #fff;
-  padding: 6px 10px;
+  margin-top: 10px;
+  background: var(--primary-btn);
+  color: var(--primary-btn-text);
+  padding: 8px 14px;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-/* Forms (Add/Edit Pages) */
+.card .view-btn:hover {
+  opacity: 0.9;
+}
+
+/* ---------------------------------------------------
+   FORMS
+--------------------------------------------------- */
 form {
   display: flex;
   flex-direction: column;
@@ -144,45 +198,41 @@ form {
 form input,
 form textarea,
 form select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-text);
 }
 
 form button {
-  background: #007bff;
-  color: white;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
+  background: var(--primary-btn);
+  color: var(--primary-btn-text);
   border: none;
+  font-size: 16px;
   cursor: pointer;
+  font-weight: 600;
 }
 
-/* Detail Page */
+/* ---------------------------------------------------
+   DETAIL PAGE
+--------------------------------------------------- */
+.recipe-detail-card {
+  border-radius: 14px;
+  padding: 20px;
+}
+
 img {
   max-width: 100%;
+  border-radius: 8px;
   margin-bottom: 15px;
-  border-radius: 6px;
 }
 
-button {
-  margin-right: 10px;
-  padding: 8px 14px;
-  border: none;
-  background: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.error-message {
-  color: #d32f2f;
-  font-size: 14px;
-  margin-top: 4px;
-  min-height: 18px;
-}
-
-/* Toast Notifications */
+/* ---------------------------------------------------
+   TOAST NOTIFICATIONS
+--------------------------------------------------- */
 #toastContainer {
   position: fixed;
   top: 20px;
@@ -207,16 +257,13 @@ button {
 .toast.success {
   background: #2e7d32;
 }
-
 .toast.error {
   background: #d32f2f;
 }
-
 .toast.warning {
   background: #ed6c02;
 }
 
-/* Animations */
 @keyframes slideIn {
   from {
     opacity: 0;

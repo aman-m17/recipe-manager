@@ -14,7 +14,7 @@ function renderRecipes(recipes) {
         <p>${r.description}</p>
         <p><strong>Difficulty:</strong> ${r.difficulty}</p>
         <p><strong>Prep:</strong> ${r.prepTime} min</p>
-        <a class="btn small" href="pages/detail.html?id=${r.id}">View</a>
+        <a class="view-btn" href="pages/detail.html?id=${r.id}">View</a>
       </div>
     `
     )
