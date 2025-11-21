@@ -1,4 +1,5 @@
 import { getRecipes, saveRecipes } from "./storage.js";
+import { showToast } from "./toast.js";
 
 const form = document.getElementById("editRecipeForm");
 
@@ -103,5 +104,9 @@ form.addEventListener("submit", (e) => {
 
   saveRecipes(recipes);
 
-  window.location.href = "../index.html";
+  showToast("Recipe updated!", "success");
+
+  setTimeout(() => {
+    window.location.href = "../index.html";
+  }, 800);
 });

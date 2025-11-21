@@ -1,4 +1,5 @@
 import { getRecipes, saveRecipes } from "./storage.js";
+import { showToast } from "./toast.js";
 
 const container = document.getElementById("detailContainer");
 
@@ -50,6 +51,11 @@ function renderDetail(r) {
 
     const updated = recipes.filter((x) => x.id !== r.id);
     saveRecipes(updated);
-    window.location.replace("../index.html");
+
+    showToast("Recipe deleted", "warning");
+
+    setTimeout(() => {
+      window.location.replace("../index.html");
+    }, 800);
   };
 }

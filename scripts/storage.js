@@ -1,4 +1,5 @@
 import { safeJSONParse, generateId } from "./utils.js";
+import { showToast } from "./toast.js";
 
 const STORAGE_KEY = "recipes";
 
@@ -48,6 +49,9 @@ export function getRecipes() {
   if (!parsed || !Array.isArray(parsed)) {
     const samples = getSampleRecipes();
     saveRecipes(samples);
+
+    showToast("Local data was corrupted. Restored defaults.", "error");
+
     return samples;
   }
 
