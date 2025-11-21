@@ -10,11 +10,21 @@ function renderRecipes(recipes) {
     .map(
       (r) => `
       <div class="card">
+
+        ${r.imageUrl ? `<img src="${r.imageUrl}" class="card-img" />` : ""}
+
         <h3>${r.title}</h3>
         <p>${r.description}</p>
+
         <p><strong>Difficulty:</strong> ${r.difficulty}</p>
         <p><strong>Prep:</strong> ${r.prepTime} min</p>
-        <a class="view-btn" href="pages/detail.html?id=${r.id}">View</a>
+
+        <div class="card-footer">
+          <a class="btn btn-primary" href="pages/detail.html?id=${
+            r.id
+          }">View Recipe</a>
+        </div>
+
       </div>
     `
     )

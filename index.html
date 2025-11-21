@@ -7,14 +7,24 @@
   </head>
 
   <body>
-    <header>
-      <h1>Recipe Manager</h1>
+    <header class="home-header">
+      <div class="home-title-block">
+        <h1>Recipe Manager</h1>
+        <p class="subtitle">Your personal cooking companion</p>
+      </div>
 
       <div class="header-right">
-        <button id="themeToggle" class="btn small">🌙</button>
-        <a href="pages/add.html" id="addRecipeBtn">Add Recipe</a>
+        <button id="themeToggle" class="btn btn-light">🌙</button>
+        <a href="pages/add.html" id="addRecipeBtn" class="btn btn-primary"
+          >Add Recipe</a
+        >
       </div>
     </header>
+
+    <section class="hero">
+      <h2>Cook • Create • Organize</h2>
+      <p>Save your recipes, improve them, and discover new ideas.</p>
+    </section>
 
     <section class="controls">
       <input type="text" id="searchInput" placeholder="Search recipes..." />
