@@ -22,39 +22,58 @@ form.addEventListener("submit", (e) => {
 
   let valid = true;
 
+  // FORM INPUTS
   const title = form.title.value.trim();
   const description = form.description.value.trim();
   const ingredients = form.ingredients.value.trim();
   const steps = form.steps.value.trim();
   const difficulty = form.difficulty.value;
   const prepTime = form.prepTime.value.trim();
+  const cookTime = form.cookTime.value.trim();
+  const servings = form.servings.value.trim();
   const imageUrl = form.imageUrl.value.trim();
 
-  // Validation rules
+  // VALIDATION
   if (!title) {
     showError("err-title", "Title is required.");
     valid = false;
   }
+
   if (!description) {
     showError("err-description", "Description cannot be empty.");
     valid = false;
   }
+
   if (!ingredients) {
     showError("err-ingredients", "Enter at least 1 ingredient.");
     valid = false;
   }
+
   if (!steps) {
     showError("err-steps", "Enter at least 1 step.");
     valid = false;
   }
+
   if (difficulty === "") {
     showError("err-difficulty", "Select a difficulty level.");
     valid = false;
   }
+
   if (!prepTime || Number(prepTime) <= 0) {
     showError("err-preptime", "Prep time must be a positive number.");
     valid = false;
   }
+
+  if (!cookTime || Number(cookTime) <= 0) {
+    showError("err-cooktime", "Cook time must be a positive number.");
+    valid = false;
+  }
+
+  if (!servings || Number(servings) <= 0) {
+    showError("err-servings", "Servings must be a positive number.");
+    valid = false;
+  }
+
   if (imageUrl && !imageUrl.startsWith("http")) {
     showError("err-image", "Image URL must begin with http or https.");
     valid = false;
@@ -62,7 +81,7 @@ form.addEventListener("submit", (e) => {
 
   if (!valid) return;
 
-  // Build new recipe object
+  // NEW RECIPE OBJECT (CLEAN + CONSISTENT)
   const newRecipe = {
     id: generateId(),
     title,
@@ -77,9 +96,12 @@ form.addEventListener("submit", (e) => {
       .filter(Boolean),
     difficulty,
     prepTime: Number(prepTime),
+    cookTime: Number(cookTime),
+    servings: Number(servings),
     imageUrl,
   };
 
+  // SAVE
   const list = getRecipes();
   list.push(newRecipe);
   saveRecipes(list);
@@ -88,5 +110,5 @@ form.addEventListener("submit", (e) => {
 
   setTimeout(() => {
     window.location.href = "../index.html";
-  }, 800);
+  }, 1000);
 });

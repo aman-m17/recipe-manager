@@ -11,20 +11,26 @@ function renderRecipes(recipes) {
       (r) => `
       <div class="card">
 
-        ${r.imageUrl ? `<img src="${r.imageUrl}" class="card-img" />` : ""}
+        <img 
+        src="${r.imageUrl || "./images/food.jpg"}" 
+        class="card-img" 
+        onerror="this.src='./images/food.jpg'" 
+        />
+
 
         <h3>${r.title}</h3>
         <p>${r.description}</p>
 
-        <p><strong>Difficulty:</strong> ${r.difficulty}</p>
         <p><strong>Prep:</strong> ${r.prepTime} min</p>
+        <p><strong>Cook:</strong> ${r.cookTime} min</p>
+        <p><strong>Serving:</strong> ${r.servings}</p>
+        <p><strong>Difficulty:</strong> ${r.difficulty}</p>
 
         <div class="card-footer">
-          <a class="btn btn-primary" href="pages/detail.html?id=${
-            r.id
-          }">View Recipe</a>
+          <a class="btn btn-primary" href="pages/detail.html?id=${r.id}">
+            View Recipe
+          </a>
         </div>
-
       </div>
     `
     )

@@ -18,44 +18,42 @@ if (!recipe) {
 
 function renderDetail(r) {
   container.innerHTML = `
-    <div class="detail-card">
+  <div class="detail-card">
 
-      <div class="detail-header">
-        <h2>${r.title}</h2>
-        <span class="badge">${r.difficulty}</span>
-      </div>
-
-      ${r.imageUrl ? `<img class="detail-img" src="${r.imageUrl}" />` : ""}
-
-      <div class="detail-meta">
-        <p><strong>Prep Time:</strong> ${r.prepTime} min</p>
-      </div>
-
-      <div class="section">
-        <h3>Ingredients</h3>
-        <ul>
-          ${r.ingredients.map((i) => `<li>${i}</li>`).join("")}
-        </ul>
-      </div>
-
-      <div class="section">
-        <h3>Steps</h3>
-        <ol>
-          ${r.steps.map((s) => `<li>${s}</li>`).join("")}
-        </ol>
-      </div>
-
-        
-      <div class="detail-actions">
-        <a href="edit.html?id=${r.id}" class="btn btn-primary">Edit Recipe</a>
-        <button id="deleteBtn" class="btn btn-danger">Delete</button>
-      </div>
-
-      </div>
-
+    <div class="detail-header">
+      <h2>${r.title}</h2>
+      <span class="badge">${r.difficulty}</span>
     </div>
-  `;
 
+    ${r.imageUrl ? `<img src="${r.imageUrl}" class="detail-img" />` : ""}
+
+    <div class="detail-meta">
+      <p><strong>Prep Time:</strong> ${r.prepTime} min</p>
+      <p><strong>Cook Time:</strong> ${r.cookTime} min</p>
+      <p><strong>Servings:</strong> ${r.servings}</p>
+    </div>
+
+    <div class="section">
+      <h3>Ingredients</h3>
+      <ul>
+        ${r.ingredients.map((i) => `<li>${i}</li>`).join("")}
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Steps</h3>
+      <ol>
+        ${r.steps.map((s) => `<li>${s}</li>`).join("")}
+      </ol>
+    </div>
+
+    <div class="detail-actions">
+      <a href="edit.html?id=${r.id}" class="btn btn-primary">Edit Recipe</a>
+      <button id="deleteBtn" class="btn btn-danger">Delete</button>
+    </div>
+
+  </div>
+`;
   document.getElementById("deleteBtn").onclick = () => {
     const confirmed = confirm("Delete this recipe?");
     if (!confirmed) return;
