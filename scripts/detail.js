@@ -11,37 +11,48 @@ const recipes = getRecipes();
 const recipe = recipes.find((r) => r.id === id);
 
 if (!recipe) {
-  container.innerHTML = "<p>Recipe not found.</p>";
+  container.innerHTML = "<p class='not-found'>Recipe not found.</p>";
 } else {
   renderDetail(recipe);
 }
 
 function renderDetail(r) {
   container.innerHTML = `
-    <div class="recipe-detail-card">
+    <div class="detail-card">
 
-      <h2>${r.title}</h2>
-
-      ${r.imageUrl ? `<img src="${r.imageUrl}" alt="${r.title}" />` : ""}
-
-      <p><strong>Description:</strong> ${r.description}</p>
-      <p><strong>Difficulty:</strong> ${r.difficulty}</p>
-      <p><strong>Prep Time:</strong> ${r.prepTime} minutes</p>
-
-      <h3>Ingredients</h3>
-      <ul>
-        ${r.ingredients.map((i) => `<li>${i}</li>`).join("")}
-      </ul>
-
-      <h3>Steps</h3>
-      <ol>
-        ${r.steps.map((s) => `<li>${s}</li>`).join("")}
-      </ol>
-
-      <div class="detail-actions">
-        <a class="btn primary" href="edit.html?id=${r.id}">Edit</a>
-        <button id="deleteBtn" class="btn danger">Delete</button>
+      <div class="detail-header">
+        <h2>${r.title}</h2>
+        <span class="badge">${r.difficulty}</span>
       </div>
+
+      ${r.imageUrl ? `<img class="detail-img" src="${r.imageUrl}" />` : ""}
+
+      <div class="detail-meta">
+        <p><strong>Prep Time:</strong> ${r.prepTime} min</p>
+      </div>
+
+      <div class="section">
+        <h3>Ingredients</h3>
+        <ul>
+          ${r.ingredients.map((i) => `<li>${i}</li>`).join("")}
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Steps</h3>
+        <ol>
+          ${r.steps.map((s) => `<li>${s}</li>`).join("")}
+        </ol>
+      </div>
+
+        
+      <div class="detail-actions">
+        <a href="edit.html?id=${r.id}" class="btn btn-primary">Edit Recipe</a>
+        <button id="deleteBtn" class="btn btn-danger">Delete</button>
+      </div>
+
+      </div>
+
     </div>
   `;
 
@@ -55,7 +66,7 @@ function renderDetail(r) {
     showToast("Recipe deleted", "warning");
 
     setTimeout(() => {
-      window.location.replace("../index.html");
-    }, 800);
+      window.location.href = "../index.html";
+    }, 1000);
   };
 }

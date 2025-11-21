@@ -1,6 +1,5 @@
-/* ---------------------------------------------------
-   RESET
---------------------------------------------------- */
+/*  RESET  */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +8,8 @@
     border-color 0.25s ease;
 }
 
-/* ---------------------------------------------------
-   THEME VARIABLES
---------------------------------------------------- */
+/*  THEME VARIABLES  */
+
 :root {
   --bg-color: #ffffff;
   --text-color: #222222;
@@ -40,9 +38,8 @@
   --shadow: rgba(255, 255, 255, 0.12);
 }
 
-/* ---------------------------------------------------
-   GLOBAL LAYOUT
---------------------------------------------------- */
+/*  GLOBAL LAYOUT  */
+
 body {
   max-width: 1200px;
   margin: 0 auto;
@@ -52,9 +49,8 @@ body {
   font-family: system-ui, sans-serif;
 }
 
-/* ---------------------------------------------------
-   HEADER
---------------------------------------------------- */
+/*   HEADER   */
+
 header {
   display: flex;
   align-items: center;
@@ -108,9 +104,8 @@ header h1 {
   box-shadow: 0 4px 8px var(--shadow);
 }
 
-/* ---------------------------------------------------
-   SEARCH + FILTERS
---------------------------------------------------- */
+/*   SEARCH + FILTERS   */
+
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -130,18 +125,16 @@ header h1 {
   box-shadow: 0 2px 4px var(--shadow);
 }
 
-/* ---------------------------------------------------
-   GRID OF CARDS
---------------------------------------------------- */
+/*  GRID OF CARDS  */
+
 .grid {
   display: grid;
   gap: 26px;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 }
 
-/* ---------------------------------------------------
-   CARD UI (Modern)
---------------------------------------------------- */
+/*  CARD UI (Modern)  */
+
 .card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -185,9 +178,8 @@ header h1 {
   opacity: 0.9;
 }
 
-/* ---------------------------------------------------
-   FORMS
---------------------------------------------------- */
+/*   FORMS   */
+
 form {
   display: flex;
   flex-direction: column;
@@ -206,33 +198,11 @@ form select {
 }
 
 form button {
-  padding: 10px;
-  border-radius: 8px;
-  background: var(--primary-btn);
-  color: var(--primary-btn-text);
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  font-weight: 600;
+  margin-top: 10px;
 }
 
-/* ---------------------------------------------------
-   DETAIL PAGE
---------------------------------------------------- */
-.recipe-detail-card {
-  border-radius: 14px;
-  padding: 20px;
-}
+/*   TOAST NOTIFICATIONS   */
 
-img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-/* ---------------------------------------------------
-   TOAST NOTIFICATIONS
---------------------------------------------------- */
 #toastContainer {
   position: fixed;
   top: 20px;
@@ -280,4 +250,150 @@ img {
     opacity: 0;
     transform: translateY(-10px);
   }
+}
+
+/*   DETAIL PAGE (Full Modern UI)   */
+
+.detail-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px var(--shadow);
+  border: 1px solid var(--card-border);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.detail-header h2 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.badge {
+  padding: 6px 12px;
+  background: var(--primary-btn);
+  color: var(--primary-btn-text);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.detail-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 18px 0;
+}
+
+.detail-meta {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+.section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.section ul,
+.section ol {
+  padding-left: 22px;
+  line-height: 1.6;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.not-found {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+/*   FORM CARD   */
+
+.form-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px var(--shadow);
+  border: 1px solid var(--card-border);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+form label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+form input,
+form textarea,
+form select {
+  margin-bottom: 6px;
+}
+
+form button {
+  margin-top: 10px;
+}
+
+/*   BUTTONS (Unified Styling)   */
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--primary-btn);
+  color: var(--primary-btn-text);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: var(--danger-btn);
+  color: #fff;
+}
+
+.btn-danger:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-light {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--card-border);
+  padding: 8px 14px;
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px var(--shadow);
 }

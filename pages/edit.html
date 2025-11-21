@@ -9,51 +9,57 @@
   <body>
     <header>
       <h1>Edit Recipe</h1>
-      <button id="themeToggle" class="btn small">🌙</button>
-      <a href="../index.html" class="btn">← Back</a>
+
+      <div class="header-right">
+        <button id="themeToggle" class="btn small">🌙</button>
+        <a href="../index.html" class="btn btn-light">← Back</a>
+      </div>
     </header>
 
     <main>
-      <form id="editRecipeForm">
-        <label>Title</label>
-        <input type="text" id="title" required />
-        <p class="error-message" id="err-title"></p>
+      <div class="form-card">
+        <form id="editRecipeForm">
+          <label>Title</label>
+          <input type="text" name="title" />
+          <div id="err-title" class="error-message"></div>
 
-        <label>Description</label>
-        <textarea id="description" required></textarea>
-        <p class="error-message" id="err-description"></p>
+          <label>Description</label>
+          <textarea name="description" rows="3"></textarea>
+          <div id="err-description" class="error-message"></div>
 
-        <label>Ingredients (one per line)</label>
-        <textarea id="ingredients" required></textarea>
-        <p class="error-message" id="err-ingredients"></p>
+          <label>Ingredients (one per line)</label>
+          <textarea name="ingredients" rows="5"></textarea>
+          <div id="err-ingredients" class="error-message"></div>
 
-        <label>Steps (one per line)</label>
-        <textarea id="steps" required></textarea>
-        <p class="error-message" id="err-steps"></p>
+          <label>Steps (one per line)</label>
+          <textarea name="steps" rows="5"></textarea>
+          <div id="err-steps" class="error-message"></div>
 
-        <label>Difficulty</label>
-        <select id="difficulty" required>
-          <option value="Easy">Easy</option>
-          <option value="Medium">Medium</option>
-          <option value="Hard">Hard</option>
-        </select>
-        <p class="error-message" id="err-difficulty"></p>
+          <label>Difficulty</label>
+          <select name="difficulty">
+            <option value="">Select</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+          <div id="err-difficulty" class="error-message"></div>
 
-        <label>Prep Time (minutes)</label>
-        <input type="number" id="prepTime" required />
+          <label>Prep Time (minutes)</label>
+          <input type="number" name="prepTime" />
+          <div id="err-preptime" class="error-message"></div>
 
-        <label>Image URL (optional)</label>
-        <input type="url" id="imageUrl" />
-        <p class="error-message" id="err-image"></p>
+          <label>Image URL (optional)</label>
+          <input type="text" name="imageUrl" />
+          <div id="err-image" class="error-message"></div>
 
-        <button type="submit" class="btn primary">Update Recipe</button>
-      </form>
+          <button type="submit" class="btn btn-primary">Update Recipe</button>
+        </form>
+      </div>
     </main>
-
-    <div id="toastContainer"></div>
 
     <script type="module" src="../scripts/edit.js"></script>
     <script src="../scripts/theme.js"></script>
-    <script type="module" src="../scripts/toast.js"></script>
+
+    <div id="toastContainer"></div>
   </body>
 </html>

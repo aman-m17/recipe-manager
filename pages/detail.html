@@ -2,23 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Recipe Detail</title>
+    <title>Recipe Details</title>
     <link rel="stylesheet" href="../styles/style.css" />
   </head>
 
   <body>
     <header>
       <h1>Recipe Details</h1>
-      <button id="themeToggle" class="btn small">🌙</button>
-      <a href="../index.html" class="btn">← Back</a>
+
+      <div class="header-right">
+        <button id="themeToggle" class="btn small">🌙</button>
+        <a href="../index.html" class="btn btn-light">← Back</a>
+      </div>
     </header>
 
     <main id="detailContainer" class="detail-page"></main>
 
-    <div id="toastContainer"></div>
-
     <script type="module" src="../scripts/detail.js"></script>
     <script src="../scripts/theme.js"></script>
-    <script type="module" src="../scripts/toast.js"></script>
+
+    <div id="toastContainer"></div>
   </body>
 </html>
