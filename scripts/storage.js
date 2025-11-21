@@ -39,7 +39,7 @@ function getSampleRecipes() {
       prepTime: 30,
       cookTime: 45,
       servings: 4,
-      imageUrl: "/images/biryani.jpg",
+      imageUrl: "images/biryani.jpg",
     },
 
     {
@@ -70,7 +70,7 @@ function getSampleRecipes() {
       prepTime: 10,
       cookTime: 5,
       servings: 1,
-      imageUrl: "/images/omelette.jpg",
+      imageUrl: "images/omelette.jpg",
     },
 
     {
@@ -104,7 +104,7 @@ function getSampleRecipes() {
       prepTime: 15,
       cookTime: 20,
       servings: 3,
-      imageUrl: "/images/paneer.jpg",
+      imageUrl: "images/paneer.jpg",
     },
 
     {
@@ -137,7 +137,7 @@ function getSampleRecipes() {
       prepTime: 15,
       cookTime: 15,
       servings: 2,
-      imageUrl: "/images/pasta-primavera.jpg",
+      imageUrl: "images/pasta-primavera.jpg",
     },
 
     {
@@ -166,7 +166,7 @@ function getSampleRecipes() {
       prepTime: 3,
       cookTime: 1,
       servings: 1,
-      imageUrl: "/images/mug-cake.jpg",
+      imageUrl: "images/mug-cake.jpg",
     },
   ];
 }
