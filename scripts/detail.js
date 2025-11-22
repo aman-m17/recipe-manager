@@ -25,7 +25,12 @@ function renderDetail(r) {
       <span class="badge">${r.difficulty}</span>
     </div>
 
-    ${r.imageUrl ? `<img src="${r.imageUrl}" class="detail-img" />` : ""}
+    ${
+      r.imageUrl
+        ? `<img src="../${r.imageUrl}" class="detail-img" onerror="this.src='../images/food.jpg'" />`
+        : `<img src="../images/food.jpg" class="detail-img" />`
+    }
+
 
     <div class="detail-meta">
       <p><strong>Prep Time:</strong> ${r.prepTime} min</p>
