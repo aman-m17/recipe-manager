@@ -7,7 +7,6 @@ Users can add, edit, delete, and view recipes, switch between light/dark mode, f
 
 <a href="https://aman-m17.github.io/recipe-manager/" target="_blank">Click here to view the live project</a>
 
-
 ## 🚀 How to Run the Application
 
 This project uses JavaScript ES Modules (import/export).
@@ -23,7 +22,6 @@ Select “Open with Live Server”
 
 App runs at:http://localhost:5500/index.html
 
-
 Option 2 — Python Simple Server
 
 Run this inside the project folder:
@@ -32,14 +30,11 @@ python -m http.server 5500
 
 Open: http://localhost:5500/index.html
 
-
 Option 3 — Node.js http-server
 npm install -g http-server
 http-server .
 
-
 Option 4 - The live Recipe Manager App can be visited at https://aman-m17.github.io/recipe-manager/
-
 
 ## ✨ Features
 
@@ -53,7 +48,6 @@ Option 4 - The live Recipe Manager App can be visited at https://aman-m17.github
 - Placeholder handling for broken or missing images
 - Scroll-to-error + validation UX
 
-
 ## 📦 Data Structure (localStorage)
 
 All recipe data is stored inside:
@@ -64,25 +58,25 @@ The value is an array of recipe objects with the following structure:
 
 {
 
-  "id": "unique-string-id",
-  
-  "title": "String",
-  
-  "description": "String",
-  
-  "ingredients": ["String", "String", "..."],
-  
-  "steps": ["String", "String", "..."],
-  
-  "difficulty": "Easy | Medium | Hard",
-  
-  "prepTime": Number,
-  
-  "cookTime": Number,
-  
-  "servings": Number,
-  
-  "imageUrl": "String (URL) or default-food.jpg"
+"id": "unique-string-id",
+
+"title": "String",
+
+"description": "String",
+
+"ingredients": ["String", "String", "..."],
+
+"steps": ["String", "String", "..."],
+
+"difficulty": "Easy | Medium | Hard",
+
+"prepTime": Number,
+
+"cookTime": Number,
+
+"servings": Number,
+
+"imageUrl": "String (URL) or default-food.jpg"
 
 }
 
@@ -90,28 +84,27 @@ Recipe Object Example:
 
 {
 
-  "id": "rcp_001",
-  
-  "title": "Paneer Butter Masala",
-  
-  "description": "Rich and creamy North Indian curry.",
-  
-  "ingredients": ["Paneer", "Tomatoes", "Cream"],
-  
-  "steps": ["Blend tomatoes", "Cook gravy", "Add paneer and simmer"],
-  
-  "difficulty": "Medium",
-  
-  "prepTime": 20,
-  
-  "cookTime": 30,
-  
-  "servings": 4,
-  
-  "imageUrl": "./images/paneer.jpg"
+"id": "rcp_001",
+
+"title": "Paneer Butter Masala",
+
+"description": "Rich and creamy North Indian curry.",
+
+"ingredients": ["Paneer", "Tomatoes", "Cream"],
+
+"steps": ["Blend tomatoes", "Cook gravy", "Add paneer and simmer"],
+
+"difficulty": "Medium",
+
+"prepTime": 20,
+
+"cookTime": 30,
+
+"servings": 4,
+
+"imageUrl": "./images/paneer.jpg"
 
 }
-
 
 ## 🧠 Assumptions
 
@@ -128,7 +121,6 @@ The app is completely offline — no backend or user accounts.
 Users may refresh, but forms do not auto-save.
 
 Browser supports ES module imports (<script type="module">).
-
 
 ## ⚠️ Limitations
 
@@ -148,7 +140,6 @@ Data can be lost if localStorage is cleared.
 
 Long text may break the card layout slightly.
 
-
 ## 🐞 Known Issues
 
 These issues are known and may be improved in future iterations:
@@ -167,3 +158,21 @@ Recipe fields do not currently support:
 Fractions (e.g., "0.5 servings")
 
 Step numbering with sub-steps
+
+## 🛠️ Tech Stack
+
+- **HTML5** – UI structure
+- **CSS3 / Modern Flex/Grid** – Styling
+- **Vanilla JavaScript (ES Modules)** – Logic
+- **GitHub Pages** – Deployment
+
+## 🗺️ Roadmap / Future Enhancements
+
+- Add pagination for large recipe lists
+- Add drag-and-drop recipe reordering
+- Add ability to upload photos (FileReader API)
+- Add categories/tags for better filtering
+
+## 🙌 Credits
+
+Built by Aman as part of a front-end development learning project.
