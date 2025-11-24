@@ -23,21 +23,36 @@ Select “Open with Live Server”
 
 App runs at:http://localhost:5500/index.html
 
+
 Option 2 — Python Simple Server
 
 Run this inside the project folder:
 
 python -m http.server 5500
 
-Open:
+Open: http://localhost:5500/index.html
 
-http://localhost:5500/index.html
 
 Option 3 — Node.js http-server
 npm install -g http-server
 http-server .
 
+
 Option 4 - The live Recipe Manager App can be visited at https://aman-m17.github.io/recipe-manager/
+
+
+## ✨ Features
+
+- Add, edit, delete recipes (full CRUD)
+- Real-time search & filters
+- Difficulty & prep-time filtering
+- LocalStorage data persistence
+- Light/Dark mode toggle
+- Error handling with field highlighting
+- Responsive modern UI
+- Placeholder handling for broken or missing images
+- Scroll-to-error + validation UX
+
 
 ## 📦 Data Structure (localStorage)
 
@@ -48,6 +63,7 @@ localStorage["recipes"]
 The value is an array of recipe objects with the following structure:
 
 {
+
   "id": "unique-string-id",
   
   "title": "String",
@@ -67,11 +83,13 @@ The value is an array of recipe objects with the following structure:
   "servings": Number,
   
   "imageUrl": "String (URL) or default-food.jpg"
+
 }
 
-Example Object:
+Recipe Object Example:
 
 {
+
   "id": "rcp_001",
   
   "title": "Paneer Butter Masala",
@@ -91,7 +109,9 @@ Example Object:
   "servings": 4,
   
   "imageUrl": "./images/paneer.jpg"
+
 }
+
 
 ## 🧠 Assumptions
 
@@ -108,6 +128,7 @@ The app is completely offline — no backend or user accounts.
 Users may refresh, but forms do not auto-save.
 
 Browser supports ES module imports (<script type="module">).
+
 
 ## ⚠️ Limitations
 
@@ -126,6 +147,7 @@ No reordering of recipes (drag-and-drop not implemented).
 Data can be lost if localStorage is cleared.
 
 Long text may break the card layout slightly.
+
 
 ## 🐞 Known Issues
 
