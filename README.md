@@ -3,9 +3,10 @@
 A lightweight, browser-based recipe management application built using HTML, CSS, and JavaScript.
 Users can add, edit, delete, and view recipes, switch between light/dark mode, filter and search, and enjoy a modern UI — all with localStorage persistence.
 
-## Live link
+## 🔗 Live Demo
 
-The live Recipe Manager App can be visited at https://aman-m17.github.io/recipe-manager/
+<a href="https://aman-m17.github.io/recipe-manager/" target="_blank">Click here to view the live project</a>
+
 
 ## 🚀 How to Run the Application
 
@@ -47,30 +48,31 @@ localStorage["recipes"]
 The value is an array of recipe objects with the following structure:
 
 {
-"id": "unique-string-id",
-"title": "String",
-"description": "String",
-"ingredients": ["String", "String", "..."],
-"steps": ["String", "String", "..."],
-"difficulty": "Easy | Medium | Hard",
-"prepTime": Number,
-"cookTime": Number,
-"servings": Number,
-"imageUrl": "String (URL) or default-food.jpg"
+  "id": "unique-string-id",
+  "title": "String",
+  "description": "String",
+  "ingredients": ["String", "String", "..."],
+  "steps": ["String", "String", "..."],
+  "difficulty": "Easy | Medium | Hard",
+  "prepTime": Number,
+  "cookTime": Number,
+  "servings": Number,
+  "imageUrl": "String (URL) or default-food.jpg"
 }
 
-Example Object
+Example Object:
+
 {
-"id": "rcp_001",
-"title": "Paneer Butter Masala",
-"description": "Rich and creamy North Indian curry.",
-"ingredients": ["Paneer", "Tomatoes", "Cream"],
-"steps": ["Blend tomatoes", "Cook gravy", "Add paneer and simmer"],
-"difficulty": "Medium",
-"prepTime": 20,
-"cookTime": 30,
-"servings": 4,
-"imageUrl": "./images/paneer.jpg"
+  "id": "rcp_001",
+  "title": "Paneer Butter Masala",
+  "description": "Rich and creamy North Indian curry.",
+  "ingredients": ["Paneer", "Tomatoes", "Cream"],
+  "steps": ["Blend tomatoes", "Cook gravy", "Add paneer and simmer"],
+  "difficulty": "Medium",
+  "prepTime": 20,
+  "cookTime": 30,
+  "servings": 4,
+  "imageUrl": "./images/paneer.jpg"
 }
 
 ## 🧠 Assumptions
