@@ -4,6 +4,7 @@ const listEl = document.getElementById("recipeList");
 const searchInput = document.getElementById("searchInput");
 const difficultyFilter = document.getElementById("difficultyFilter");
 const prepTimeFilter = document.getElementById("prepTimeFilter");
+const emptyMessage = document.getElementById("emptyMessage");
 
 function renderRecipes(recipes) {
   listEl.innerHTML = recipes
@@ -56,6 +57,13 @@ function applyFilters() {
     list = list.filter((r) => r.prepTime <= Number(maxTime));
   }
 
+  if (list.length === 0) {
+    listEl.innerHTML = "";
+    emptyMessage.style.display = "block";
+    return;
+  }
+
+  emptyMessage.style.display = "none";
   renderRecipes(list);
 }
 

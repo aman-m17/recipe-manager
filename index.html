@@ -45,9 +45,21 @@
       </select>
     </section>
 
+    <p id="emptyMessage" class="empty-message" style="display: none">
+      <span class="empty-emoji">🍽️</span>
+      <br />
+      <strong>No recipes found</strong>
+      <br />
+      Try adjusting your search or filters.
+    </p>
+
     <main id="recipeList" class="grid"></main>
 
     <div id="toastContainer"></div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
     <script type="module" src="scripts/app.js"></script>
     <script src="scripts/theme.js"></script>

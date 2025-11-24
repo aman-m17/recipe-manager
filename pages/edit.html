@@ -19,23 +19,28 @@
     <main>
       <div class="form-card">
         <form id="editRecipeForm">
-          <label>Title</label>
+          <label>Title<span class="req">*</span> </label>
+          <small class="helper-text">Title of the recipe.</small>
           <input type="text" name="title" />
           <div id="err-title" class="error-message"></div>
 
-          <label>Description</label>
+          <label>Description<span class="req">*</span> </label>
+          <small class="helper-text">A short summary of the recipe.</small>
           <textarea name="description" rows="3"></textarea>
           <div id="err-description" class="error-message"></div>
 
-          <label>Ingredients (one per line)</label>
+          <label>Ingredients (one per line)<span class="req">*</span> </label>
+          <small class="helper-text">List each ingredient on a new line.</small>
           <textarea name="ingredients" rows="5"></textarea>
           <div id="err-ingredients" class="error-message"></div>
 
-          <label>Steps (one per line)</label>
+          <label>Steps (one per line)<span class="req">*</span> </label>
+          <small class="helper-text">List each step on a new line.</small>
           <textarea name="steps" rows="5"></textarea>
           <div id="err-steps" class="error-message"></div>
 
-          <label>Difficulty</label>
+          <label>Difficulty<span class="req">*</span> </label>
+          <small class="helper-text">Select the difficulty level.</small>
           <select name="difficulty">
             <option value="">Select</option>
             <option value="Easy">Easy</option>
@@ -44,19 +49,23 @@
           </select>
           <div id="err-difficulty" class="error-message"></div>
 
-          <label>Prep Time (minutes)</label>
+          <label>Prep Time (minutes)<span class="req">*</span> </label>
+          <small class="helper-text">Preparation time in minutes.</small>
           <input type="number" name="prepTime" />
           <div id="err-preptime" class="error-message"></div>
 
-          <label>Cook Time (minutes)</label>
+          <label>Cook Time (minutes)<span class="req">*</span> </label>
+          <small class="helper-text">Cooking time in minutes.</small>
           <input type="number" name="cookTime" />
           <div id="err-cooktime" class="error-message"></div>
 
-          <label>Servings</label>
+          <label>Servings<span class="req">*</span> </label>
+          <small class="helper-text">Number of servings.</small>
           <input type="number" name="servings" />
           <div id="err-servings" class="error-message"></div>
 
           <label>Image URL (optional)</label>
+          <small class="helper-text">Link to an image of the dish.</small>
           <input type="text" name="imageUrl" />
           <div id="err-image" class="error-message"></div>
 
@@ -64,6 +73,10 @@
         </form>
       </div>
     </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
     <script type="module" src="../scripts/edit.js"></script>
     <script src="../scripts/theme.js"></script>
