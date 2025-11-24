@@ -18,15 +18,11 @@
 
     <main id="detailContainer" class="detail-page"></main>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-
     <footer class="app-footer">
       <div class="footer-inner">
         <p>© <span id="year"></span> Recipe Manager • Crafted by Aman</p>
         <p class="footer-links">
-          <a href="#">Home</a>
+          <a href="https://aman-m17.github.io/recipe-manager/">Home</a>
           ·
           <a href="https://github.com/Aman-m17/recipe-manager" target="_blank"
             >GitHub</a
@@ -35,6 +31,9 @@
       </div>
     </footer>
 
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
     <script type="module" src="../scripts/detail.js"></script>
     <script src="../scripts/theme.js"></script>
 

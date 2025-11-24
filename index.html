@@ -57,10 +57,6 @@
 
     <div id="toastContainer"></div>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-
     <footer class="app-footer">
       <div class="footer-inner">
         <p>© <span id="year"></span> Recipe Manager • Crafted by Aman</p>
@@ -74,6 +70,9 @@
       </div>
     </footer>
 
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
     <script type="module" src="scripts/app.js"></script>
     <script src="scripts/theme.js"></script>
     <script type="module" src="scripts/toast.js"></script>
