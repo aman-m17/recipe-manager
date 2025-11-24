@@ -49,14 +49,23 @@ The value is an array of recipe objects with the following structure:
 
 {
   "id": "unique-string-id",
+  
   "title": "String",
+  
   "description": "String",
+  
   "ingredients": ["String", "String", "..."],
+  
   "steps": ["String", "String", "..."],
+  
   "difficulty": "Easy | Medium | Hard",
+  
   "prepTime": Number,
+  
   "cookTime": Number,
+  
   "servings": Number,
+  
   "imageUrl": "String (URL) or default-food.jpg"
 }
 
@@ -64,14 +73,23 @@ Example Object:
 
 {
   "id": "rcp_001",
+  
   "title": "Paneer Butter Masala",
+  
   "description": "Rich and creamy North Indian curry.",
+  
   "ingredients": ["Paneer", "Tomatoes", "Cream"],
+  
   "steps": ["Blend tomatoes", "Cook gravy", "Add paneer and simmer"],
+  
   "difficulty": "Medium",
+  
   "prepTime": 20,
+  
   "cookTime": 30,
+  
   "servings": 4,
+  
   "imageUrl": "./images/paneer.jpg"
 }
 
